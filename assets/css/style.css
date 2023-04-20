@@ -1,0 +1,310 @@
+*{
+    user-select: none;
+    font-family: 'Shantell Sans';
+    scroll-behavior: smooth;
+    transition: all 0.3s;
+}
+
+body
+{
+    background-color: #e5e3e3;
+    /* overflow: hidden; */
+} 
+
+.container
+{
+    margin-top: 10vh;
+}
+
+.content {
+    max-width: 66vh;
+    width: 90%;
+    max-height: 75vh;
+    margin: 0px auto; 
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.search-bar
+{
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.search-bar input
+{
+    width: 100%;
+    height: 6vh;
+    font-size: 1rem;
+    padding:0 10px 0 38px;
+    border: none;
+    outline: solid 1px;
+    border-radius: 5px;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    cursor: pointer;
+}
+  
+.search-bar svg
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(10px,10px);
+}
+
+#products
+{ 
+    overflow-y: scroll;
+    max-height: 60vh;
+    padding: 10px;
+}
+
+/* Hide scrollbar buttons */
+::-webkit-scrollbar-button {
+    display: none;
+  }
+  
+  /* Hide scrollbar background */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Style scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Style scrollbar thumb */
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+  }
+  
+  
+
+.item
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #EEE;
+    padding: 7px;
+    cursor: pointer;
+}
+
+.item:not(:last-child)
+{
+    margin-bottom: 10px;
+}
+
+.product-image
+{
+    background-color: #fff;
+}
+
+.name-price
+{
+   min-width:20vh;
+   width: 20vh;
+   font-family:sans-serif;
+   font-weight: 700;
+   text-align: left;
+}
+
+.cardInfo
+{
+    position: absolute;
+    width: 80vh;
+    height: 60vh;
+    top: 0;
+    left: 0;
+    transform: translate(70vh,17vh) scale(0);
+    border-radius: 10px;
+    background-color: #fff;
+    z-index: 2;
+    transition:transform 0.3s;    
+}
+
+
+.card-info-header
+{
+    padding: 10px ;
+    border-bottom:1px solid rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#card-update-date
+{
+    color: red;
+}
+
+.card-info-body
+{
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.5);
+}
+
+.card-info-image
+{
+    padding: 10px;
+    width: 250px;
+}
+
+.card-info-image img
+{
+    width: 200px;
+    height: 200px;
+}
+
+
+.card-info-info
+{
+    
+    height: 100%;
+    width: 80%;
+}
+
+.main-product-info
+{
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid 1px;
+    width: 100%;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.main-product-info span
+{
+    line-height: 5vh;
+}
+
+#product-card-name
+{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: coral;
+    word-wrap: break-word;
+    display: inline-block;
+}
+
+#product-card-price
+{
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.size-info
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.size
+{
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.07rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.sizes
+{
+    min-width: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sizes span
+{
+    padding: 0px 17px;
+    cursor: pointer;
+    font-weight: 800;
+    border-radius: 20px;
+    transition: none;
+    background-color: #EEE;
+}
+
+.sizes span:hover
+{
+    background-color: #d9d9d9;
+}
+
+.card-info-footer
+{
+    padding:20px ;
+    text-align: right;
+}
+
+.card-info-footer button
+{
+    border-radius: 5px;
+    padding:5px 20px;
+    border: none;
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 0.04rem;
+    transition: 0s;
+}
+
+.card-info-footer button:first-child{
+    background-color: #25a538;
+}
+
+.card-info-footer button:first-child:hover
+{
+    background-color: #3ed454;
+}
+
+.card-info-footer button:first-child:active
+{
+    background-color: #23e641;
+}
+
+.card-info-footer button:last-child{
+    background-color: red;
+}
+
+.card-info-footer button:last-child:hover{
+    background-color: rgb(240, 63, 63);
+}
+
+.card-info-footer button:last-child:active{
+    background-color: rgb(236, 34, 34);
+}
+
+
+.overlay
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000ba;
+    filter: blur(1px);
+    z-index: 1;
+    display: none;
+    transition:display 0.3s;
+}
+
+@media screen and (max-width:500px) {
+    .search-bar input
+    {
+        height: 4.5vh;
+    }
+}

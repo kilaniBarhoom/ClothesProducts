@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Shantell Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Clothes Brand</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="search-bar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+                <input type="search" name="" id="searchForProduct" placeholder="Search For A Product">
+            </div>
+            <div id="products">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="cardInfo">
+        <div class="card-info-header">
+            <span>Card Info</span>
+            <div>
+                <span>Updated : </span>
+                <span id="card-update-date"></span>
+            </div>
+            <button type="button" class="btn-close" onclick="closeCard()" aria-label="Close"></button>
+        </div>
+        <div class="card-info-body">
+            <div class="card-info-image" id="card-image">
+                
+            </div>
+            <div class="card-info-info">
+                    <div class="main-product-info">
+                        <span>Name : <span id="product-card-name"> White T</span></span>
+                        <span>⭐⭐⭐⭐⭐ <a href="" id="prev" style="color:gold; font-weight: 800;" ondblclick="prev()">(100+ reviews)</a></span>
+                        <span>Price : <span id="product-card-price">24$</span></span>
+                    </div>
+
+                    <div class="size-info">
+                        <span class="size">Size : <span id="size"></span></span>
+                        <div class="sizes">
+                            <span onclick="chooseSize(1)">S</span>
+                            <span onclick="chooseSize(2)">M</span>
+                            <span onclick="chooseSize(3)">L</span>
+                            <span onclick="chooseSize(4)">XL</span>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="card-info-footer">
+            <button id="order">Order</button>
+            <button id="close-card" onclick="closeCard()">Close</button>
+        </div>
+    </div>
+
+    <div class="overlay">
+
+    </div>
+
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
