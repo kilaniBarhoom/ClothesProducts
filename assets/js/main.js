@@ -67,7 +67,8 @@ let products = [
 let matchingIndexes = products
 
 updateProducts(matchingIndexes)
-
+let items = document.querySelectorAll('.item');
+showCardInfo(items)
 function updateProducts(matchingIndexes)
 {
     let UpdatedItems ="";
@@ -101,35 +102,34 @@ let input = document.getElementById('searchForProduct');
 
      matchingIndexes = indexesToCopy.map(index => ({ ...products[index] }));
      updateProducts(matchingIndexes)
-
+     items = document.querySelectorAll('.item');
+     showCardInfo(items)
   });
 
-  
-
-let items = document.querySelectorAll('.item');
-
-
-items.forEach( (item,ind) => {
-    item.addEventListener('click', () =>{
-        document.querySelector('.cardInfo').style.transform = 'translate(70vh,17vh) scale(1)'
-        document.querySelector('.overlay').style.display ='block'
-
-        let cardProdImg = document.getElementById('card-image');
-        let cardProdName = document.getElementById('product-card-name');
-        let cardProdPrice = document.getElementById('product-card-price');
-
-        cardProdImg.innerHTML = 
-        `
-            <img id="card-image" src="assets/images/${products[ind].image}" alt="">
-        `
-
-        cardProdName.innerHTML = products[ind].name
-        cardProdPrice.innerHTML = products[ind].price + ' $'
-
-        let date = new Date()
-        document.getElementById('card-update-date').innerHTML = date.getDate() + ' / ' + date.getMonth() + ' / ' + date.getFullYear()
-    })
-});
+function showCardInfo(items)
+{
+    items.forEach( (item, ind) => {
+        item.addEventListener('click', () =>{
+            document.querySelector('.cardInfo').style.transform = 'translate(70vh,17vh) scale(1)'
+            document.querySelector('.overlay').style.display ='block'
+    
+            let cardProdImg = document.getElementById('card-image');
+            let cardProdName = document.getElementById('product-card-name');
+            let cardProdPrice = document.getElementById('product-card-price');
+    
+            cardProdImg.innerHTML = 
+            `
+                <img id="card-image" src="assets/images/${matchingIndexes[ind].image}" alt="">
+            `
+    
+            cardProdName.innerHTML = matchingIndexes[ind].name
+            cardProdPrice.innerHTML = matchingIndexes[ind].price + ' $'
+    
+            let date = new Date()
+            document.getElementById('card-update-date').innerHTML = date.getDate() + ' / ' + date.getMonth() + ' / ' + date.getFullYear()
+        })
+    });
+}
 
 function closeCard()
 {
@@ -165,3 +165,4 @@ function chooseSize(ind){
              size[i].style.border ='none'
     }
 }
+// create a new array of products that updates with searching
