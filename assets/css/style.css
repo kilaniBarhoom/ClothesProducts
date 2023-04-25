@@ -117,17 +117,27 @@ input[type="search"]::-webkit-search-cancel-button {
    text-align: left;
 }
 
-.cardInfo
+.card-info-container
 {
+    width: 100%;
+    height: 100%;
+    border: solid;
     position: absolute;
-    width: 80vh;
-    height: 60vh;
     top: 0;
     left: 0;
-    transform: translate(70vh,17vh) scale(0);
+    z-index: 2;
+    display: none;
+}
+
+.cardInfo
+{
+    
+    margin: 8% auto;
+    width: 80vh;
+    height: 60vh;
+    transform:scale(0);
     border-radius: 10px;
     background-color: #fff;
-    z-index: 2;
     transition:transform 0.3s;    
 }
 
@@ -299,7 +309,20 @@ input[type="search"]::-webkit-search-cancel-button {
     filter: blur(1px);
     z-index: 1;
     display: none;
-    transition:display 0.3s;
+    transition:all 0.3s;
+}
+
+
+
+@keyframes fade {
+
+    0%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 0%;
+    }
+    
 }
 
 @media screen and (max-width:500px) {

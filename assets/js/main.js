@@ -110,7 +110,10 @@ function showCardInfo(items)
 {
     items.forEach( (item, ind) => {
         item.addEventListener('click', () =>{
-            document.querySelector('.cardInfo').style.transform = 'translate(70vh,17vh) scale(1)'
+            document.querySelector('.card-info-container').style.display = 'block'
+            setTimeout(() => document.querySelector('.cardInfo').style.transform = 'scale(1)'
+            ,100)
+            
             document.querySelector('.overlay').style.display ='block'
     
             let cardProdImg = document.getElementById('card-image');
@@ -133,8 +136,14 @@ function showCardInfo(items)
 
 function closeCard()
 {
-    document.querySelector('.cardInfo').style.transform = 'translate(70vh,17vh) scale(0)'
-    document.querySelector('.overlay').style.display ='none'
+    document.querySelector('.cardInfo').style.transform = 'scale(0)'
+    setTimeout(() => {
+        document.querySelector('.overlay').style.display ='none'
+        document.querySelector('.card-info-container').style.display = 'none'
+    }
+            ,200)
+    
+    
     let size = document.querySelectorAll('.sizes span')
     for(let i = 0; i < size.length; i++)
     {
